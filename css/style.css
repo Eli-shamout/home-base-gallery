@@ -1486,7 +1486,7 @@ footer{
         box-shadow: 0px 0px 1px whitesmoke;
         cursor:pointer
     }
-    .footer-row-2{display: grid;grid-template-areas:'pay-way' 'powered-by';background-color: red;}
+    .footer-row-2{display: grid;grid-template-areas:'pay-way' 'powered-by';background-color: ;}
     .powered-by{font-size: 3vw;width: fit-content;margin:10px auto 0px auto;grid-area:'powered-by';}
     .pay-way{width: fit-content;margin:10px auto;grid-area:'pay-way';}
 }
