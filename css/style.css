@@ -69,14 +69,13 @@ a{
     position: sticky;
     top:0;
     z-index: 10;
-    transition: height 0.5s;
 }
 .heder-content{
     display: grid;
     grid-template-columns: 5;
     grid-template-rows: 1;
     margin:50px 0px;
-    transition: margin 0.5s;
+    transition: margin 0.5s 0.2s;
 }
 .header-logo{
     grid-column: 1/2;
@@ -87,7 +86,6 @@ a{
 .login{
     grid-column: 4/5;
 }
-
 
 
 .navbar{
@@ -403,8 +401,63 @@ grid-column-start:1/4 ;
 }
 
 
-
-
+@media screen and (max-width:500px) {
+    .header-logo{
+        grid-column: 1/5;
+        text-align: center;
+        margin-bottom:20px;
+    }
+    .navbar{
+        grid-column: 3/5;
+        grid-row: 2/3;
+    }
+    .login{
+        text-align: center;
+        margin:0px auto 0px auto;
+        grid-column: 1/3;
+        grid-row: 2/3;
+        z-index: 1;
+    }
+}
+@media screen and (max-width:350px) {
+    .header-logo{
+        grid-column: 1/5;
+        text-align: center;
+        margin-bottom:20px;
+    }
+    .navbar{
+        grid-column: 1/5;
+        grid-row: 3/4;
+        width: 100%;
+    }
+    .more{
+        width: 100%;
+        display: block;
+    }
+    .dropdown{
+        position: absolute;
+        width:100%;
+        height:0px;
+        left:0;
+        margin: auto;
+        top:43px;
+        overflow: hidden;
+        transition: height 0.3s,opacity 0.3s,visibility 0.3s;
+        cursor: default;
+        background-color: rgb(255, 255, 255);
+        border: 2px solid var(--MainColor);
+        opacity: 0;
+        z-index: 2;
+        visibility: hidden;
+    }
+    .login{
+        text-align: center;
+        margin:0px auto 0px auto;
+        grid-column: 1/5;
+        grid-row:2/3;
+        z-index: 1;
+    }
+}
 
 
 
@@ -572,9 +625,10 @@ section.slider .container .translate-left:hover{
 .category-content .category-item{
     margin:10px auto;
     position: relative;
-    padding:20px ;
+    padding:20px 20px 0px 20px;
     display: inline-block;
     width:290px;
+    height: auto;
     text-align: left;
 }
 
@@ -646,7 +700,28 @@ section.slider .container .translate-left:hover{
 .trans-Circle span:hover{
     transform: scale(1);
 }
-
+@media screen and (max-width:500px) {
+    .category-content .category-item{
+        width:100%;
+        margin: auto;
+    }
+    .category-content .category-evaluation{
+        font-size: 3vw;
+    }
+    .category-content .category-desc{
+        font-size: 4vw;
+        font-weight: 600;
+    }
+    .btn-click{
+        width:10vw;
+        height:10vw;
+    }
+    .btn-click .icon{
+        font-size: 25px;
+        line-height: 10vw;
+        color:white;
+    }
+}
 
 
 /* Discount */
@@ -829,13 +904,12 @@ section.slider .container .translate-left:hover{
 
 /* Features */
 .features{
-    margin:100px 0px 100px 0px;
+    margin:100px auto 100px auto;
 }
 .features .features-content{
     width: 100%;
     text-align: center;
     width: fit-content;
-    margin: auto;
 }
 .features .features-content li{
     display: inline-block;
@@ -901,7 +975,7 @@ section.slider .container .translate-left:hover{
         margin:50px auto;
     }
     .features .features-content li{
-        margin:20px;
+        margin:20px auto;
         display: inline-block;
         width: 100%;
     }
@@ -966,7 +1040,6 @@ section.slider .container .translate-left:hover{
 /* Product Content */
 .product-content{
     text-align: center;
-    background-color: ;
 }
 .product-item{
     color:#999;
@@ -974,9 +1047,10 @@ section.slider .container .translate-left:hover{
     width:350px;
     display: inline-block;
     overflow: hidden;
-    margin:20px;
+    margin:20px auto;
     text-align: left;
 }
+
 .product-list-item:hover{color: #7b5244;}
 .prudect-info{
     margin:10px 20px;
@@ -1035,7 +1109,10 @@ section.slider .container .translate-left:hover{
 .product-item-img{
     position: relative;
     transition: opacity 0.4s;
+    width: 100%;
+    background-color: red;
 }
+.product-item-img img{width:100%;}
 .hover-product-item{
     position: absolute;
     width:100%;
@@ -1115,7 +1192,14 @@ section.slider .container .translate-left:hover{
 @media screen and (max-width:600px) {
     .product-list-item:nth-child(2){display: none;}
 }
-
+@media screen and (max-width:500px) {
+    .product-item{
+        width:80vw;
+        height: auto;
+        margin:30px auto;
+        overflow: hidden;
+    }
+}
 
 /* Vedio And Description */
 .desc-vedio{
@@ -1220,6 +1304,7 @@ section.slider .container .translate-left:hover{
 .Trademarks{
     margin:20px 0px;
     text-align: center;
+
 }
 
 .Trademarks ul{
@@ -1347,6 +1432,10 @@ footer{
     box-shadow: 0px 0px 1px whitesmoke;
     cursor:pointer
 }
+.footer-row-1 .item:nth-child(2) li:hover{cursor: pointer;color: #c0a49bc4;}
+.footer-row-2{display: flex;;background-color: ;margin:20px auto}
+.powered-by{font-size: 20px;width: fit-content;margin:10px auto 0px auto;}
+.pay-way{width: fit-content;margin:10px auto;font-size: 20px;}
 @media screen and (max-width:1300px) {
     .footer-row-1{grid-template-areas:'item-1 item-1''item-2 item-3' !important;}
 }
@@ -1397,43 +1486,19 @@ footer{
         box-shadow: 0px 0px 1px whitesmoke;
         cursor:pointer
     }
+    .footer-row-2{display: grid;grid-template-areas:'pay-way' 'powered-by';background-color: red;}
+    .powered-by{font-size: 3vw;width: fit-content;margin:10px auto 0px auto;grid-area:'powered-by';}
+    .pay-way{width: fit-content;margin:10px auto;grid-area:'pay-way';}
 }
-
-
-.footer-row-2{
-    border-top:1px solid rgba(255, 255, 255, 0.63);
-    display: grid;   
-    grid-template-areas:'powered-by pay-way';
-    align-items: center;
-
-}
-.footer-row-2 div{
-    flex:1;
-}
-.powered-by{
-    text-transform: capitalize;
-    color:rgba(255, 255, 255, 0.63);
-    width: fit-content;
-    grid-area:powered-by;
-}
-.pay-way{
-    text-align: right;
-    padding:20px;
-    width: fit-content;
-    margin: auto;
-    grid-area:pay-way;
-}
-.pay-way i{
-    text-align: right;
-    margin:0px 5px;
-    font-size: 25px;
-}
-@media screen and (max-width:960px) {
-    .footer-row-2{
-        grid-template-areas:'pay-way''powered-by';
-        justify-content: center;
+@media screen and (max-width:500px) {
+    .footer-row-1 .item:nth-child(2){
+        display: grid;
+        grid-template-columns: auto;
+        background-color: ;
     }
-    .powered-by{margin-bottom: 30px;}
+    .footer-row-1 .item:nth-child(2) ul{
+        margin:20px auto;
+    }
 }
 
 
